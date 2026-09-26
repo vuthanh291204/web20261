@@ -1,0 +1,95 @@
+/* Màu nền chung */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8e19e;
+    color: #663300; 
+}
+.wrapper {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+/* Header */
+header { padding: 20px 0; }
+.header-content { display: flex; justify-content: space-between; align-items: center; }
+.header-left .blp-title-small { font-family: "Georgia", serif; font-weight: bold; font-size: 20px; }
+.header-center .blp-logo { font-family: "Georgia", serif; font-weight: bold; font-size: 60px; margin: 0; }
+.header-right { text-align: right; }
+.header-right-text { color: #996633; font-size: 12px; margin-bottom: 5px; }
+.search-bar { display: flex; gap: 5px; }
+.search-bar input { background-color: #fff; border: 1px solid #c9c2a3; padding: 5px 10px; width: 200px; }
+.search-bar button { background-color: #009900; color: #fff; border: none; padding: 6px 15px; cursor: pointer; font-weight: bold; }
+
+/* Bố cục chính */
+.main-body-container { display: flex; background-color: #fff; padding: 20px; margin-bottom: 20px; border: 1px solid #c9c2a3; }
+.sidebar { width: 200px; flex-shrink: 0; padding-right: 20px; }
+.main-content { flex-grow: 1; min-width: 0; }
+
+/* Menu bên trái */
+.main-menu { list-style: none; margin: 0 0 20px 0; padding: 0; }
+.main-menu li { margin-bottom: 10px; }
+.main-menu a { display: block; background-color: #331a00; color: #f8e19e; border: 2px solid #f8e19e; text-decoration: none; text-align: center; padding: 15px 10px; font-weight: bold; font-size: 18px; }
+
+/* Khối phụ bên trái */
+.sidebar-block { margin-bottom: 20px; border: 1px solid #c9c2a3; padding: 15px; background-color: #fcfcfc; }
+.sidebar-block h3 { color: #663300; font-size: 16px; margin-top: 0; }
+.sidebar-block.placeholder { background-color: #e6b85c; border: none; }
+.placeholder-title { color: #fff !important; background-color: #996633; padding: 10px; margin: -15px -15px 15px -15px !important; text-align: center; }
+.sidebar-block h4 { color: #fff; margin: 15px 0 5px 0; font-size: 14px; }
+.sidebar-block p { font-size: 12px; margin: 0; line-height: 1.4; color: #333; }
+.sidebar-block .read-more { color: #009900; font-size: 12px; text-decoration: none; font-weight: bold; }
+
+/* Nút mạng xã hội */
+.social-icons { display: flex; gap: 10px; justify-content: center; }
+.social-icons a { display: flex; width: 30px; height: 30px; border: 1px solid #c9c2a3; align-items: center; justify-content: center; text-decoration: none; background-color: #fff; font-size: 16px; }
+.icon-tw { color: #00acee; }
+.icon-fb { color: #3b5998; }
+.icon-gg { color: #db4a39; }
+
+.view-more-button { display: block; background: linear-gradient(to bottom, #00ee00, #00aa00); color: #fff; text-decoration: none; text-align: center; padding: 12px; border-radius: 8px; font-weight: bold; border: 1px solid #008800; }
+
+/* CSS cho Form Đăng ký */
+.form-title { color: #663300; font-size: 24px; margin: 0 0 10px 0; font-weight: bold; }
+.form-desc { font-size: 14px; margin-bottom: 20px; line-height: 1.5; }
+form fieldset { border: 1px solid #c9c2a3; margin-bottom: 20px; padding: 15px 20px; }
+form legend { color: #663300; font-weight: bold; padding: 0 5px; font-size: 16px; }
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; margin-bottom: 5px; color: #663300; font-size: 14px; }
+.form-group input:not([type="radio"]):not([type="checkbox"]), .form-group textarea, .form-group select { width: 100%; box-sizing: border-box; padding: 10px; border: 1px solid #c9c2a3; background-color: #fff; font-size: 14px; color: #663300; }
+.form-group textarea { height: 80px; resize: vertical; }
+.radio-group, .checkbox-group { display: flex; gap: 15px; align-items: center; }
+.radio-group label, .checkbox-group label { display: inline; margin: 0; }
+.radio-group input, .checkbox-group input { margin: 0; }
+.terms-checkbox { display: flex; gap: 10px; align-items: center; margin-bottom: 20px; }
+.terms-checkbox label { display: inline; margin: 0; font-size: 14px; }
+.form-buttons { display: flex; gap: 10px; }
+.btn-submit, .btn-reset { border: 1px solid #666; padding: 10px 20px; cursor: pointer; font-weight: bold; font-size: 14px; color: #fff; }
+.btn-submit { background-color: #4CAF50; border-color: #388E3C; }
+.btn-reset { background-color: #4CAF50; border-color: #388E3C; }
+
+/* Footer */
+footer { width: 1000px; margin: 0 auto; padding: 20px; background-color: #f8e19e; }
+.footer-icons { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 20px; }
+.footer-item { text-align: center; }
+.footer-item-icon { font-size: 40px; color: #996633; margin-bottom: 10px; }
+.footer-item p { font-size: 11px; color: #996633; line-height: 1.4; margin: 0; padding: 0 10px; }
+.copyright { text-align: center; font-size: 10px; color: #996633; margin-top: 20px; }
+
+/* CSS BỔ SUNG CHO TRANG MEDIA.HTML */
+.media-article .article-title { color: #663300; font-size: 24px; margin: 0 0 5px 0; font-weight: bold; }
+.media-article .meta-info { font-size: 12px; color: #666; margin-bottom: 20px; font-style: italic; }
+.media-article .meta-info a { color: #663300; text-decoration: underline; }
+.media-article section { margin-bottom: 30px; }
+.media-article h2 { color: #663300; font-size: 16px; text-align: center; margin-bottom: 15px; font-weight: bold; }
+.media-article p { font-size: 14px; line-height: 1.6; text-align: justify; margin-bottom: 15px; color: #333; }
+.media-article .center-text { text-align: center; }
+.media-article figure { margin: 0 0 20px 0; text-align: center; }
+.media-article figure img { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+.media-article figcaption { font-size: 12px; color: #333; font-style: italic; margin-top: 8px; }
+.media-article video { width: 100%; max-height: 350px; background: #000; outline: none; }
+.media-article audio { width: 100%; margin-top: 10px; outline: none; }
+.media-article iframe { width: 100%; height: 250px; border: none; }
+.media-article .article-footer { font-size: 12px; font-style: italic; border-top: 1px dashed #c9c2a3; padding-top: 10px; margin-top: 20px; color: #333; }
+.media-article .article-footer a { color: #333; text-decoration: underline; }

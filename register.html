@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký nhận thông tin - Blackletterpress</title>
+    <!-- Nhúng file CSS dùng chung -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Nhúng thư viện icon FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="header-content">
+                <div class="header-left">
+                    <div class="blp-title-small">Blackletterpress</div>
+                </div>
+                <div class="header-center">
+                    <div class="blp-logo">BLP</div>
+                </div>
+                <div class="header-right">
+                    <div class="header-right-text">Your online source of trusted news</div>
+                    <div class="search-bar">
+                        <input type="text" placeholder="Enter search query">
+                        <button type="submit">Search</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-body-container">
+            <nav class="sidebar">
+                <ul class="main-menu">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="news.html">NEWS</a></li>
+                    <li><a href="blog.html">BLOG</a></li>
+                </ul>
+
+                <div class="sidebar-block connect">
+                    <h3>Connect with us:</h3>
+                    <div class="social-icons">
+                        <!-- Đã thay bằng icon chuẩn -->
+                        <a href="#" title="Twitter"><i class="fab fa-twitter icon-tw"></i></a>
+                        <a href="#" title="Facebook"><i class="fab fa-facebook-f icon-fb"></i></a>
+                        <a href="#" title="Google+"><i class="fab fa-google-plus-g icon-gg"></i></a>
+                    </div>
+                </div>
+
+                <div class="sidebar-block placeholder">
+                    <h3 class="placeholder-title">Placeholder</h3>
+                    <h4>Title Sample One</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend ligula vel velit varius</p>
+                    <a href="#" class="read-more">Read more</a>
+                    <br><br>
+                    <h4>Title Sample One</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend ligula vel velit varius</p>
+                    <a href="#" class="read-more">Read more</a>
+                </div>
+
+                <div class="sidebar-block-view-more">
+                    <a href="#" class="view-more-button">View More</a>
+                </div>
+            </nav>
+
+            <main class="main-content">
+                <h1 class="form-title">Đăng ký nhận thông tin</h1>
+                <p class="form-desc">Điền thông tin bên dưới để nhận bản tin định kỳ. Các trường có dấu * là bắt buộc.</p>
+
+                <form action="#" method="post">
+                    <fieldset>
+                        <legend>Thông tin tài khoản</legend>
+                        <div class="form-group">
+                            <label>Họ và tên *</label>
+                            <input type="text" name="fullname" placeholder="Nguyễn Văn A" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" name="email" placeholder="ban@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Mật khẩu * (tối thiểu 8 ký tự)</label>
+                            <input type="password" name="password" minlength="8" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Số điện thoại * (10 số, bắt đầu bằng 0)</label>
+                            <input type="tel" name="phone" pattern="0[0-9]{9}" required>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Thông tin cá nhân</legend>
+                        <div class="form-group">
+                            <label>Ngày sinh *</label>
+                            <input type="date" name="dob" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Độ tuổi *</label>
+                            <!-- Đổi sang text để mất nút tăng giảm, dùng pattern để ép nhập số -->
+                            <input type="text" name="age" pattern="[0-9]*" inputmode="numeric" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Giới tính *</label>
+                            <div class="radio-group">
+                                <input type="radio" id="male" name="gender" value="male" required><label for="male">Nam</label>
+                                <input type="radio" id="female" name="gender" value="female"><label for="female">Nữ</label>
+                                <input type="radio" id="other" name="gender" value="other"><label for="other">Khác</label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Tuỳ chọn nhận tin</legend>
+                        <div class="form-group">
+                            <label>Chủ đề quan tâm</label>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="topic_news" name="topic" value="news"><label for="topic_news">Tin tức</label>
+                                <input type="checkbox" id="topic_blog" name="topic" value="blog"><label for="topic_blog">Blog</label>
+                                <input type="checkbox" id="topic_event" name="topic" value="event"><label for="topic_event">Sự kiện</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Khu vực</label>
+                            <select name="region">
+                                <option value="">-- Chọn khu vực --</option>
+                                <option value="mb">Miền Bắc</option>
+                                <option value="mt">Miền Trung</option>
+                                <option value="mn">Miền Nam</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Lời nhắn</label>
+                            <textarea name="message" placeholder="Bạn muốn nhận nội dung gì?"></textarea>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-group terms-checkbox">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">Tôi đồng ý với điều khoản sử dụng *</label>
+                    </div>
+
+                    <div class="form-buttons">
+                        <input type="submit" value="Đăng ký" class="btn-submit">
+                        <input type="reset" value="Nhập lại" class="btn-reset">
+                    </div>
+                </form>
+            </main>
+        </div>
+
+        <footer>
+            <div class="footer-icons">
+                <div class="footer-item">
+                    <div class="footer-item-icon"><i class="fas fa-home"></i></div>
+                    <p>This website template has been designed by Free Website Templates for you, for free. You can replace all this text with your own text.</p>
+                </div>
+                <div class="footer-item">
+                    <div class="footer-item-icon"><i class="fas fa-user-tie"></i></div>
+                    <p>This website template has been designed by Free Website Templates for you, for free. You can replace all this text with your own text.</p>
+                </div>
+                <div class="footer-item">
+                    <div class="footer-item-icon"><i class="fas fa-globe"></i></div>
+                    <p>This website template has been designed by Free Website Templates for you, for free. You can replace all this text with your own text.</p>
+                </div>
+                <div class="footer-item">
+                    <div class="footer-item-icon"><i class="fas fa-pencil-alt"></i></div>
+                    <p>This website template has been designed by Free Website Templates for you, for free. You can replace all this text with your own text.</p>
+                </div>
+            </div>
+            <div class="copyright">
+                © Copyright © 2011, Company name all rights reserved
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
