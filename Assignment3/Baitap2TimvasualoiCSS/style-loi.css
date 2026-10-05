@@ -22,8 +22,10 @@ a {
 /* ===== Header / thanh điều hướng ===== */
 .site-header {
 	background: #2b2b2b;
-	position: sticky;
+	position: fixed;
 	top: 0;
+	left: 0;
+	width: 100%;
 	z-index: 100;
 }
 
