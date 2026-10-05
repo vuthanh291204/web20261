@@ -15,17 +15,18 @@ a {
 	color: inherit;
 }
 
+/* Giữ nguyên overflow-x: hidden nhưng loại bỏ box của .page
+   để không tạo scroll container cản position: sticky */
 .page {
 	overflow-x: hidden;
+	display: contents;
 }
 
 /* ===== Header / thanh điều hướng ===== */
 .site-header {
 	background: #2b2b2b;
-	position: fixed;
+	position: sticky;
 	top: 0;
-	left: 0;
-	width: 100%;
 	z-index: 100;
 }
 
