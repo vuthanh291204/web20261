@@ -1,0 +1,416 @@
+/* 1. RESET & BIẾN CƠ BẢN (DESIGN SYSTEM) */
+:root {
+  --primary-color: #2b2b2b;       /* Đen mực in */
+  --accent-color: #9c6644;        /* Nâu đất thủ công */
+  --accent-hover: #7f5539;
+  --bg-color: #faf9f6;            /* Màu giấy mỹ thuật kem nhạt */
+  --card-bg: #ffffff;
+  --border-color: #e5dfd8;
+  --text-muted: #666059;
+  --font-serif: "Georgia", "Times New Roman", serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --max-width: 1160px;
+  --radius: 8px;
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-serif);
+  color: var(--primary-color);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: 2.2rem; margin-bottom: 1.2rem; }
+h2 { font-size: 1.7rem; margin-bottom: 1.2rem; position: relative; padding-bottom: 0.5rem; }
+h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 45px;
+  height: 2px;
+  background-color: var(--accent-color);
+}
+h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+
+/* 2. SITE HEADER & NAVIGATION */
+.site-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--border-color);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+}
+
+.site-name {
+  font-family: var(--font-serif);
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary-color);
+}
+
+.site-name:hover {
+  text-decoration: none;
+}
+
+.tagline {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-top: 0.2rem;
+  margin-bottom: 1rem;
+}
+
+.main-nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+
+.main-nav a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  padding: 0.3rem 0.5rem;
+}
+
+.main-nav a:hover {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+/* 3. BỐ CỤC CHÍNH (LAYOUT & MAIN CONTENT) */
+.layout {
+  max-width: var(--max-width);
+  margin: 2rem auto;
+  padding: 0 1.2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+main > section, 
+main > article {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+}
+
+/* Bài viết giới thiệu */
+#gioi-thieu figure {
+  margin: 1.5rem 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+#gioi-thieu figure img {
+  width: 100%;
+  max-height: 460px;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+#gioi-thieu figcaption {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
+  text-align: center;
+  margin-top: 0.6rem;
+}
+
+#gioi-thieu p {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  color: #444;
+}
+
+/* 4. GIÁ TRỊ CỐT LÕI (VALUE CARDS) */
+.value-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.value-card {
+  padding: 1.5rem;
+  background-color: var(--bg-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 4px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.value-card h3 {
+  color: var(--accent-color);
+}
+
+.value-card p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* 5. ĐỘI NGŨ (TEAM LIST) */
+.team-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.member {
+  text-align: center;
+  background-color: var(--bg-color);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  transition: transform 0.2s ease;
+}
+
+.member:hover {
+  transform: translateY(-3px);
+}
+
+.member img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1rem;
+  border: 3px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.member h3 {
+  margin-bottom: 0.2rem;
+}
+
+.member p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* 6. BIỂU MẪU LIÊN HỆ (CONTACT FORM) */
+.contact-form {
+  margin-top: 1.5rem;
+}
+
+.contact-form p {
+  margin-bottom: 1.2rem;
+}
+
+.contact-form label {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 0.95rem;
+  background-color: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(156, 102, 68, 0.15);
+}
+
+.contact-form button {
+  background-color: var(--accent-color);
+  color: #ffffff;
+  padding: 0.8rem 1.8rem;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.contact-form button:hover {
+  background-color: var(--accent-hover);
+}
+
+.contact-form button:active {
+  transform: scale(0.98);
+}
+
+/* 7. SIDEBAR (THANH BÊN) */
+.sidebar {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+  height: fit-content;
+}
+
+.sidebar .recent {
+  margin: 1.2rem 0;
+}
+
+.sidebar .recent li {
+  padding: 0.6rem 0;
+  border-bottom: 1px dashed var(--border-color);
+}
+
+.sidebar .recent li:last-child {
+  border-bottom: none;
+}
+
+.sidebar .recent a {
+  color: var(--primary-color);
+  font-size: 0.95rem;
+}
+
+.sidebar .recent a:hover {
+  color: var(--accent-color);
+}
+
+/* 8. FOOTER */
+.site-footer {
+  background-color: #22201e;
+  color: #ddd;
+  padding: 3rem 1.2rem 1.5rem;
+  margin-top: 3rem;
+}
+
+.footer-cols {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.footer-cols h3 {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+}
+
+.footer-cols p {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #888;
+}
+
+/* 9. MEDIA QUERIES (RESPONSIVE CHO TABLET & DESKTOP) */
+
+/* Tablet (Màn hình >= 640px) */
+@media (min-width: 640px) {
+  .site-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .value-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .team-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop / Màn hình lớn (>= 992px) */
+@media (min-width: 992px) {
+  .site-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 3rem;
+  }
+
+  .tagline {
+    margin-bottom: 0;
+    margin-left: 1rem;
+    display: inline-block;
+  }
+
+  /* Chia bố cục 2 cột: Cột nội dung chính (70%) và Sidebar (30%) */
+  .layout {
+    grid-template-columns: 2.3fr 1fr;
+    gap: 2rem;
+  }
+
+  .footer-cols {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
