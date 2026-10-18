@@ -1,12 +1,10 @@
 class GioHang {
 	constructor() {
-		// Lưu các dòng sản phẩm, mỗi dòng gồm: id, ten, loai, gia, soLuong
 		this.dsDong = [];
 	}
 
 	// 1. Thêm sản phẩm vào giỏ
 	them(sanPham, soLuong) {
-		// Kiểm tra hợp lệ: kiểu number, là số nguyên, lớn hơn 0
 		if (typeof soLuong !== "number" || !Number.isInteger(soLuong) || soLuong <= 0) {
 			return false;
 		}
@@ -15,7 +13,6 @@ class GioHang {
 		if (dong) {
 			dong.soLuong += soLuong;
 		} else {
-			// Tạo bản sao độc lập với object bên ngoài
 			this.dsDong.push({
 				id: sanPham.id,
 				ten: sanPham.ten,
@@ -37,12 +34,12 @@ class GioHang {
 		return false;
 	}
 
-	// 3. Tính tổng tiền cả giỏ
+	// 3. Tính tổng tiền
 	tongTien() {
 		return this.dsDong.reduce((tong, item) => tong + item.gia * item.soLuong, 0);
 	}
 
-	// 4. Thống kê tổng tiền theo loại
+	// 4. Thống kê theo loại
 	thongKeTheoLoai() {
 		const thongKe = {};
 		for (const item of this.dsDong) {
@@ -52,27 +49,24 @@ class GioHang {
 		return thongKe;
 	}
 
-	// 5. Tìm dòng đắt nhất (thành tiền lớn nhất)
+	// 5. Dòng đắt nhất
 	dongDatNhat() {
 		if (this.dsDong.length === 0) {
 			return null;
 		}
-
-		// Giữ nguyên dòng đứng trước nếu thành tiền bằng nhau
 		const maxDong = this.dsDong.reduce((max, item) => {
 			const tienItem = item.gia * item.soLuong;
 			const tienMax = max.gia * max.soLuong;
 			return tienItem > tienMax ? item : max;
 		});
 
-		// Trả về bản sao có kèm thuộc tính thanhTien
 		return {
 			...maxDong,
 			thanhTien: maxDong.gia * maxDong.soLuong
 		};
 	}
 
-	// 6. Lấy danh sách các dòng kèm thành tiền (bản sao độc lập)
+	// 6. Lấy danh sách kèm thành tiền (bản sao độc lập)
 	layDanhSach() {
 		return this.dsDong.map(item => ({
 			...item,
@@ -80,19 +74,18 @@ class GioHang {
 		}));
 	}
 
-	// 7. Xuất mảng các dòng thành chuỗi JSON (chỉ gồm 5 thuộc tính gốc)
+	// 7. Xuất JSON
 	xuatJSON() {
 		return JSON.stringify(this.dsDong);
 	}
 }
 
-// 8. Hàm độc lập nạp dữ liệu từ chuỗi JSON tạo ra một đối tượng GioHang mới
+// 8. Nạp giỏ hàng từ JSON
 function napGioHang(chuoiJSON) {
 	const gio = new GioHang();
 	try {
 		const mangDong = JSON.parse(chuoiJSON);
 		if (Array.isArray(mangDong)) {
-			// Sao chép sâu/độc lập từng dòng để đảm bảo tính an toàn dữ liệu
 			gio.dsDong = mangDong.map(item => ({
 				id: item.id,
 				ten: item.ten,
@@ -102,7 +95,7 @@ function napGioHang(chuoiJSON) {
 			}));
 		}
 	} catch (e) {
-		console.error("Lỗi cú pháp JSON:", e);
+		console.error("Lỗi JSON:", e);
 	}
 	return gio;
 }
